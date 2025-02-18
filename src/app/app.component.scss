@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.self__wrap {
+  width: 50vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.self__ing {
+  font-size: 10vw;
+}
+
+.self__text {
+  font-family: sans-serif;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.self__text.--bold {
+  font-weight: 700;
+  font-size: 1.75vw;
+  text-transform: uppercase;
+  margin-top: 5vw;
+}
+
+.self__btn {
+  padding: .8vw 5vw;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: #2100b5;
+  font-size: 1vw;
+}
