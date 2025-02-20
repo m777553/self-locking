@@ -1,6 +1,6 @@
 <div class="self__wrap">
-  <div class="self__ing">{{content[0].image}}</div>
+  <div class="self__ing">{{todaySelfLocking.image}}</div>
   <p class="self__text">Ваш самозапрет на сегодня</p>
-  <button class="self__btn">Узнать</button>
-  <p class="self__text --bold">{{content[0].title}}</p>
+  <button class="self__btn" (click)="choseSelfLocking()">Узнать</button>
+  <p *ngIf="todaySelfLocking.title" class="self__text --bold">{{todaySelfLocking.title}}</p>
 </div>

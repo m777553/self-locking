@@ -37,4 +37,8 @@
   color: white;
   background-color: #2100b5;
   font-size: 1vw;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
