@@ -50,3 +50,8 @@ body {
     opacity: 0.8;
   }
 }
+
+.self__text.--bold.visible {
+  opacity: 1;
+  transform: translateY(0); /* Конечное положение */
+}
