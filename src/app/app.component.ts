@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CONTENT } from "./content.const";
 import { IContent } from "./app.interface";
+import {CustomAlertComponent} from "./components/custom-alert/custom-alert.component";
 
 @Component({
   selector: 'app-root',
@@ -33,11 +34,12 @@ export class AppComponent {
     }, interval);
   }
 
-  copyToClipboard() {
+  copyToClipboard(alert: CustomAlertComponent) {
     navigator.clipboard.writeText(this.todaySelfLocking.title).then(() => {
-      alert('Ваш самозапрет скопирован в буфер обмена!');
+      alert.showAlert('Ваш самозапрет скопирован в буфер обмена!');
     }).catch(err => {
       console.error('Ошибка при копировании текста: ', err);
+      alert.showAlert('Ошибка при копировании текста!');
     });
   }
 }

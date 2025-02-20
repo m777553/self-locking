@@ -4,7 +4,9 @@
   <button class="self__btn" (click)="choseSelfLocking()">Узнать</button>
   <p class="self__text --bold"
      [ngClass]="{ 'visible': isTextVisible }"
-     (click)="copyToClipboard()">
+     (click)="copyToClipboard(alert)">
     {{ todaySelfLocking.title }}
   </p>
 </div>
+
+<app-custom-alert #alert></app-custom-alert>

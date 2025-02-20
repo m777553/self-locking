@@ -1,0 +1,31 @@
+.custom-alert {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cce5ff;
+  color: #004085;
+  border: 0.1vw solid #b8daff;
+  border-radius: .8vw;
+  padding: 1vw;
+  z-index: 1000;
+  box-shadow: 0 .5vw 1vw rgba(0, 0, 0, 0.2);
+  font-size: 1.2vw;
+  line-height: 1;
+}
+
+.alert-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #004085;
+  cursor: pointer;
+  margin-left: 5vw;
+  font-size: 1.2vw;
+  line-height: 1;
+}
