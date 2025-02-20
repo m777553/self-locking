@@ -1,0 +1,3 @@
+<div *ngIf="isShown" class="congratulations__background" (click)="close.emit()">
+  <div class="congratulations__text" [innerHTML]="message"></div>
+</div>

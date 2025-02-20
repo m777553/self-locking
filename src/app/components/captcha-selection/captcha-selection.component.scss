@@ -1,0 +1,57 @@
+:host {
+  position: fixed;
+  top: 50%; /* Устанавливаем по центру по вертикали */
+  left: 50%; /* Устанавливаем по центру по горизонтали */
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid lightgrey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question{
+  background-color: #00bfff;     /* Светлый фон */
+  color: white;
+}
+
+.captcha-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.captcha-item:hover {
+  border-color: #007bff;
+}
+
+.captcha-item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  &:hover {
+    border-color: #007bff;
+  }
+}
+
+
+.captcha-item img {
+  width: 100px;
+  height: 100px;
+}
+
+.captcha-grid {
+  gap: 1px;
+}
+
+
+.question {
+  padding: 25px 30px;
+  max-width: 300px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.captcha-grid {
+  padding: 40px;
+}

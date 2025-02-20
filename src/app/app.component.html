@@ -10,3 +10,8 @@
 </div>
 
 <app-custom-alert #alert></app-custom-alert>
+<app-captcha (show)="showCaptchaSelection()"></app-captcha>
+<app-captcha-selection *ngIf="isCaptchaSelectionShown" (selected)="selectCongratulation($event)"></app-captcha-selection>
+<app-congratulations [message]="message" [isShown]="isCongratulationShown$.value" (close)="isCongratulationShown$.next(false)"></app-congratulations>
+
+

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { CONTENT } from "./content.const";
-import { IContent } from "./app.interface";
+import {Component} from '@angular/core';
+import {CONTENT, MESSAGE} from "./content.const";
+import {IContent} from "./app.interface";
 import {CustomAlertComponent} from "./components/custom-alert/custom-alert.component";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,13 @@ export class AppComponent {
     title: ''
   };
   isTextVisible = false; // Для отслеживания видимости текста
+  isCaptchaSelectionShown = false;
+  isCongratulationShown$ = new BehaviorSubject<boolean>(false);
+  message: string = ''
+
+  constructor() {
+    console.error('Наши неудержимые блюстители чистоты кода и отладки! Мы и здесь рады вас видеть и хотим поздравить с 23 февраля!')
+  }
 
   choseSelfLocking() {
     const iterations = 10; // Количество смен текстов
@@ -24,7 +32,7 @@ export class AppComponent {
     let count = 0;
     const intervalId = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * this.content.length);
-      this.todaySelfLocking = { ...this.content[randomIndex] };
+      this.todaySelfLocking = {...this.content[randomIndex]};
       count++;
 
       if (count === iterations) {
@@ -59,4 +67,24 @@ export class AppComponent {
     document.body.removeChild(textArea);
   }
 
+  showCaptchaSelection() {
+    this.isCaptchaSelectionShown = true;
+  }
+
+  selectCongratulation(selectedCongratulation: boolean | null) {
+    this.isCaptchaSelectionShown = false;
+    if (selectedCongratulation === null) {
+      this.message = MESSAGE.lk;
+    }
+    if (selectedCongratulation) {
+      this.message = MESSAGE.all
+    }
+    if (selectedCongratulation === false) {
+      this.message = MESSAGE.error
+    }
+    this.isCongratulationShown$.next(true)
+    setTimeout(() => {
+      this.isCongratulationShown$.next(false)
+    }, 10000)
+  }
 }

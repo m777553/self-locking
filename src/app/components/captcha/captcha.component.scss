@@ -1,0 +1,43 @@
+:host {
+  position: fixed;
+  bottom: 0;
+  right: -270px;                  /* Начальное положение за пределами экрана */
+  transition: right 0.3s ease;   /* Плавный переход для перемещения */
+  &:hover{
+    right: 10px;
+  }
+}
+.recaptcha__wrap {
+  display: flex;                  /* Используем flexbox для выравнивания */
+  align-items: center;           /* Центрируем элементы по вертикали */
+  background-color: #f9f9f9;     /* Светлый фон */
+  border: 1px solid #d9d9d9;     /* Граница серого цвета */
+  border-radius: 5px;            /* Скругление углов */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  max-width: 400px;              /* Максимальная ширина блока */
+  margin: 20px auto;             /* Центрируем блок по горизонтали */
+  height: 90px;
+}
+
+.recaptcha__img {
+  width: 70px;
+  height: auto;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.recaptcha__text {
+  font-size: 16px;               /* Размер шрифта */
+  font-family: Arial, sans-serif; /* Шрифт */
+  line-height: 2;              /* Высота строки для лучшей читаемости */
+  background-color: #00bfff;     /* Светлый фон */
+  height: 100%;
+  padding: 10px;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+  div {
+    font-size: 10px;
+    line-height: 1;
+  }
+}
