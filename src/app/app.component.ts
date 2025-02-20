@@ -83,8 +83,5 @@ export class AppComponent {
       this.message = MESSAGE.error
     }
     this.isCongratulationShown$.next(true)
-    setTimeout(() => {
-      this.isCongratulationShown$.next(false)
-    }, 10000)
   }
 }

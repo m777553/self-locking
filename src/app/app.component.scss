@@ -51,3 +51,30 @@
   opacity: 1;
   transform: translateY(0); /* Конечное положение */
 }
+
+.mobile {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-color: white;
+    font-size: 5vw;
+    margin-top: 20vw;
+    font-family: sans-serif;
+    line-height: 1.2;
+    span {
+      font-size: 15vw;
+    }
+    i{
+      font-size: 2vw;
+    }
+  }
+}
