@@ -35,11 +35,28 @@ export class AppComponent {
   }
 
   copyToClipboard(alert: CustomAlertComponent) {
-    navigator.clipboard.writeText(this.todaySelfLocking.title).then(() => {
-      alert.showAlert('Ваш самозапрет скопирован в буфер обмена!');
-    }).catch(err => {
+    // Создаем временный элемент textarea
+    const textArea = document.createElement('textarea');
+    textArea.value = this.todaySelfLocking.title; // Устанавливаем текст для копирования
+    document.body.appendChild(textArea); // Добавляем элемент в DOM
+    textArea.select(); // Выбираем текст
+    textArea.setSelectionRange(0, 99999); // Для мобильных устройств
+
+    // Пытаемся скопировать текст
+    try {
+      const successful = document.execCommand('copy'); // Копируем текст
+      if (successful) {
+        alert.showAlert('Ваш самозапрет скопирован в буфер обмена!');
+      } else {
+        alert.showAlert('Не удалось скопировать текст.');
+      }
+    } catch (err) {
       console.error('Ошибка при копировании текста: ', err);
       alert.showAlert('Ошибка при копировании текста!');
-    });
+    }
+
+    // Удаляем временный элемент
+    document.body.removeChild(textArea);
   }
+
 }
