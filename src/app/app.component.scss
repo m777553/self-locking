@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 :host {
   display: flex;
   width: 100vw;
@@ -21,6 +25,7 @@
   font-family: sans-serif;
   font-size: 1.5vw;
   text-align: center;
+  line-height: 1;
 }
 
 .self__text.--bold {
@@ -28,16 +33,19 @@
   font-size: 1.75vw;
   text-transform: uppercase;
   margin-top: 5vw;
+  cursor: copy;
+  min-height: 1.75vw;
 }
 
 .self__btn {
   padding: .8vw 5vw;
   border: none;
-  border-radius: 8px;
+  border-radius: .8vw;
   color: white;
   background-color: #2100b5;
   font-size: 1vw;
   cursor: pointer;
+
   &:hover {
     opacity: 0.8;
   }

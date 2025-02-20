@@ -19,4 +19,11 @@ export class AppComponent {
     const randomIndex = Math.floor(Math.random() * this.content.length);
     this.todaySelfLocking = {...this.content[randomIndex]};
   }
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.todaySelfLocking.title).then(() => {
+      alert('Ваш самозапрет скопирован в буфер обмена!');
+    }).catch(err => {
+      console.error('Ошибка при копировании текста: ', err);
+    });
+  }
 }
