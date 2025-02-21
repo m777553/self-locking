@@ -1,7 +1,7 @@
 :host {
   position: fixed;
   bottom: 0;
-  right: -270px;                  /* Начальное положение за пределами экрана */
+  right: -300px;                  /* Начальное положение за пределами экрана */
   transition: right 0.3s ease;   /* Плавный переход для перемещения */
   &:hover{
     right: 10px;

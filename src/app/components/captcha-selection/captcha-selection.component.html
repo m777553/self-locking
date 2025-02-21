@@ -1,4 +1,7 @@
-<div class="question">Выберите квадрат в котором находятся шарик(и)</div>
+
+
+
+<div class="question">Выберите изображение на котором есть шарик(и)</div>
 <div class="captcha-grid">
   <div *ngFor="let image of images; let i = index" class="captcha-item">
     <img [src]="image.src" alt="captcha image" (click)="onImgClick(image)">
